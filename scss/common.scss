@@ -1,0 +1,125 @@
+*{
+    margin:0;
+    padding:0;
+    list-style:none;
+    font-family:"微软雅黑";
+    text-decoration: none;
+    border:0;
+    color:#333;
+    outline:none;
+}
+// 头部
+header{
+    width:100%;
+    background: #ED790A;
+    height:0.96rem;
+    position: fixed;
+    top:0;left:0;
+    z-index:99;
+    .logo{
+        width:1.16rem;
+        height:0.40rem;
+        position: absolute;
+        left:0.28rem;top:0.28rem;
+        a{
+            display: block;
+            width:100%;
+            height:100%;
+            img{
+                display: block;
+                width:100%;
+                height:100%;
+            }
+        }
+    } 
+    .mune_icon{
+        width:0.80rem;
+        height:0.80rem;
+        position: absolute;
+        right:0.10rem;
+        top:0.00rem;
+        img{
+            display: block;
+            width:100%;
+            height:100%;
+        }
+    }  
+}
+// 侧边栏
+
+.sideMenu{
+    width:1.40rem;
+    height:auto;
+    background:#F09007;
+    padding:0.10rem;
+    position:fixed;
+    top:0.96rem;
+    right:-2.0rem;
+    z-index:99;
+    transition: all 0.4s ease-in-out;
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+    align-items: center;
+    ul{
+        width:100%;
+        height:auto;
+        li{
+            width:1.40rem;
+            height:0.60rem;
+            a{
+                display: block;
+                width:100%;
+                height:100%;
+                text-align:center;
+                line-height:0.60rem;
+                font-size:0.24rem;
+                color:#FBE5CB;
+            }
+        }
+    }
+}
+.on{
+    right:0;
+}
+// 底部
+footer{
+    margin-top:0.96rem;
+    width:100%;
+    height:0.96rem;
+    position:fixed;
+    left:0;
+    bottom:0;
+    background:rgb(194, 165, 165);
+    div{
+        width:100%;
+        height:100%;
+        display:flex;
+        flex-flow:row wrap;
+        justify-content: space-around;
+        align-items: center;
+        a{
+            display: block;
+            width:1.24rem;
+            height:100%;
+            img{
+                display: block;
+                width:0.54rem;
+                height:0.46rem;
+                margin-bottom:0.06rem;
+                margin-left:0.35rem;
+                padding-top:0.06rem;
+            }
+            span{
+                display:block;
+                width:100%;
+                height:0.42rem;
+                background-color:#ED8A08;
+                text-align:center;
+                line-height:0.42rem;
+                font-size:0.24rem;
+                color:#ffffff;
+            }
+        }
+    }
+}

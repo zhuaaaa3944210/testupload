@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <!-- 兼容iphone各版本机型 -->
+    <meta name="viewport" content="width=320,maximum-scale=1.3,user-scalable=no">
+    <title>服务网点 - 爽车网</title>
+    <link rel="stylesheet" href="lib/css/bootstrap.min.css" rel="external nofollow" />
+    <link rel="stylesheet" href="css/servicedot.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+    <script src="js/mobiscroll.core.js"></script>
+    <script src="js/mobiscroll.frame.js"></script>
+    <script src="js/mobiscroll.scroller.js"></script>
+    <script src="js/mobiscroll.listbase.js"></script>
+    <script src="js/mobiscroll.treelist.js"></script>
+    <script src="js/mobiscroll.i18n.zh.js"></script>
+    <link href="css/mobiscroll.frame.css" rel="stylesheet" type="text/css" />
+    <link href="css/mobiscroll.scroller.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <style>
+        body {
+            overflow: hidden;
+        }
+
+        h3 {
+            font-size: 0.48rem;
+            color: #ED790A;
+            font-weight: 700;
+        }
+
+        #demo_treelist_dummy {
+            width: 2.60rem;
+            height: 0.75rem;
+            opacity: 0;
+            margin-top: 0.08rem;
+        }
+
+        #demo_cont_treelist {
+            width: 80%;
+            margin: 0 auto;
+            padding-top: 1.00rem;
+            display: block;
+            text-align: center;
+            color: #F09007;
+            font-weight: 700;
+            background-image: url(./img/choose_city.png);
+            background-repeat: no-repeat;
+            background-size: 42% 26%;
+            -moz-background-size: 100% 100%;
+            z-index: 10001;
+            background-position: bottom;
+
+        }
+
+        #status {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            left: 50%;
+            /* centers the loading animation horizontally one the screen */
+            top: 50%;
+            /* centers the loading animation vertically one the screen */
+            background-image: url(https://raw.githubusercontent.com/niklausgerber/PreloadMe/master/img/status.gif);
+            /* path to your loading animation */
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: -100px 0 0 -100px;
+            /* is width and height divided by two */
+        }
+    </style>
+    <script>
+        //悬浮出现滚轮式的城市选择框
+        $(function () {
+            function init() {
+                // Treelist demo initialization
+                $('#demo_treelist').mobiscroll().treelist({
+                    theme: theme, // Specify theme like: theme: 'ios' or omit setting to use default 
+                    mode: mode, // Specify scroller mode like: mode: 'mixed' or omit setting to use default 
+                    display: display, // Specify display mode like: display: 'bottom' or omit setting to use default 
+                    lang: lang, // Specify language like: lang: 'pl' or omit setting to use default
+                    labels: ['Region', 'Country', 'City'] // More info about labels: http://docs.mobiscroll.com/2-14-0/list#!opt-labels
+                });
+
+            }
+
+            // -------------------------------------------------------------------
+            // Demo page code START, you can disregard this in your implementation
+            var demo, theme, mode, display, lang;
+
+            $('.settings').on('change', function () {
+                demo = 'treelist';
+                theme = $('#theme').val() || $.mobiscroll.defaults.theme,
+                    mode = 'scroller',
+                    display = 'modal',
+                    lang = 'zh';
+
+                $('.demo-cont').hide();
+                $("#demo_cont_" + demo).show();
+
+                init();
+            });
+
+            $('#demo').trigger('change');
+            // Demo page code END
+            // -------------------------------------------------------------------
+
+        });
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="homepage.html">
+                <img src="img/hp01.png" alt="">
+            </a>
+        </div>
+        <div class="mune_icon">
+            <img src="img/hp02.png" alt="">
+        </div>
+    </header>
+    <div class="sideMenu">
+        <ul>
+            <li>
+                <a href="homepage.html">首页</a>
+            </li>
+            <li>
+                <a href="member.html">会员服务</a>
+            </li>
+            <li>
+                <a href="instruction.html">使用说明</a>
+            </li>
+
+            <li>
+                <a href="aboutus.html">关于我们</a>
+            </li>
+            <li>
+                <a href="servicedot.html">服务网点</a>
+            </li>
+        </ul>
+    </div>
+    <div style="display: none;">
+        <select name="demo" id="demo" class="settings">
+            <option value="treelist">Treelist</option>
+        </select>
+    </div>
+    <!-- <div id="btn_choose_city"  ></div> -->
+    <!-- Treelist demo markup -->
+
+    <div id="demo_cont_treelist">
+        <h3 style="color:#ED790A">请输入您所在的区域</h3>
+        <!-- <input type="text" id="demo_treelist_dummy" value="" class="" placeholder="" readonly="" style="width:35%;height:10%;background-image: url(./img/choose_city.png);background-repeat:no-repeat;background-size:100% 100%;-moz-background-size:100% 100%;"> -->
+        <!-- <div data-role="fieldcontain" class="demo-cont" id="demo_cont_treelist" style="position: absolute;margin-top:-25%;margin-left:4.5%;width:40%;height:10%;background-image: url(./img/choose_city.png);background-repeat:no-repeat;background-size:100% 100%;-moz-background-size:100% 100%;">
+						</div> -->
+        <ul id="demo_treelist">
+            <li>中国
+                <ul>
+                    <li>上海
+                        <ul>
+                            <li>黄浦区</li>
+                            <li>徐汇区</li>
+                            <li>长宁区</li>
+                            <li>静安区</li>
+                            <li>普陀区</li>
+                            <li>虹口区</li>
+                            <li>杨浦区</li>
+                            <li>闵行区</li>
+                            <li>宝山区</li>
+                            <li>嘉定区</li>
+                            <li>浦东新区</li>
+                            <li>金山区</li>
+                            <li>松江区</li>
+                            <li>青浦区</li>
+                            <li>奉贤区</li>
+                            <li>崇明县</li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </li>
+
+        </ul>
+    </div>
+    <div class="list-group">
+        <div id="status">&nbsp;</div>
+    </div>
+    <footer>
+        <div>
+            <a href="scancode.html">
+                <img src="img/hp09.png" alt="">
+                <span class="weixin">
+                    微信
+                </span>
+            </a>
+            <a href="https://weibo.com/u/6466248406?from=myfollow_all">
+                <img src="img/hp10.png" alt="">
+
+                <span class="weibo">
+                    微博
+                </span>
+            </a>
+            <a href="smallRoutine.html">
+                <img src="img/hp11.png" alt="">
+
+                <span class="xiaochengxu">
+                    小程序
+                </span>
+            </a>
+        </div>
+    </footer>
+    <!-- <div id="layer_extra" style="position:fixed;top:420px;left:130px;width:35%;height:8%;border:1px solid #000;"></div> -->
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/rem.js"></script>
+    <script src="js/touch.min.js"></script>
+    <script>
+        // 匿名函数
+        // datalazyload = (function ($) {
+
+        //     var config = {
+        //         mod: 'auto', //分为auto和manul  
+        //         IMG_SRC_DATA: 'img-lazyload',
+        //         AREA_DATA_CLS: 'area-datalazyload'
+        //     };
+
+
+        //     var IMG_SRC_DATA = '';
+        //     var AREA_DATA_CLS = '';
+
+        //     //用来存放需要懒加载的图片和数据块  
+        //     var imgArr = [];
+        //     var areaArr = [];
+
+        //     //支持用户回调的事件类型  
+        //     var eventType = 'lazy';
+
+        //     /** 
+        //      * 提供给外部的接口 
+        //      * @param {Object} [userConfig] 用户自定义配置 
+        //      * @private 
+        //      */
+        //     function _init(userConfig) {
+        //         config = $.extend(config, userConfig);
+        //         console.log(config);
+        //         IMG_SRC_DATA = config.IMG_SRC_DATA;
+        //         AREA_DATA_CLS = config.AREA_DATA_CLS;
+        //         _filterItems();
+        //         _initEvent();
+        //     }
+
+        //     /** 
+        //      * 处理需要懒加载的图片和数据块的入口 
+        //      * @private 
+        //      */
+        //     function _filterItems() {
+        //         _filterImgs();
+        //         _filterAreas();
+        //     }
+
+        //     /** 
+        //      * 事件绑定 
+        //      * @private 
+        //      */
+        //     function _initEvent() {
+        //         $(window).scroll(_eventHandler);
+        //         $(window).resize(_eventHandler);
+        //         _eventHandler();
+        //     }
+
+        //     /** 
+        //      * 处理需要懒加载的图片 
+        //      * @private 
+        //      */
+        //     function _filterImgs() {
+        //         if (config.mod === 'auto') {
+        //             //自动模式  
+        //             var $imgs = $("img");
+        //             $imgs.each(function () {
+        //                 imgArr.push(this);
+        //                 var $img = $(this);
+        //                 $img.targetY = _getTargetY($img[0]); //先计算出每个图片距离页面顶部的高度，避免在事件事件处理函数中进行大量重复计算  
+        //                 var dataSrc = $img.attr(IMG_SRC_DATA);
+        //                 //对于已存在IMG_SRC_DATA的，可能其它实例处理过，我们直接跳过去  
+        //                 if (!dataSrc) {
+        //                     $img.attr(IMG_SRC_DATA, $img.attr('src'));
+        //                     $img.removeAttr('src');
+        //                 }
+        //             });
+        //         } else {
+        //             //手动模式下，已经在需要懒加载的IMG中设置了IMG_SRC_DATA属性，所以不作任何处理  
+        //             var $imgs = $("img[" + IMG_SRC_DATA + "]");
+        //             $imgs.each(function () {
+        //                 imgArr.push(this);
+        //                 var $img = $(this);
+        //                 $img.targetY = _getTargetY($img[0]); //先计算出每个图片距离页面顶部的高度，避免在事件事件处理函数中进行大量重复计算  
+        //             });
+        //         }
+        //     }
+
+        //     /** 
+        //      * 处理需要懒加载的数据块 
+        //      * @private 
+        //      */
+        //     function _filterAreas() {
+        //         var $areas = $("textarea[class='" + AREA_DATA_CLS + "']");
+        //         $areas.each(function () {
+        //             areaArr.push(this);
+        //             var $area = $(this);
+        //             $area.targetY = _getTargetY($area[0]);
+        //         });
+        //     }
+
+        //     /** 
+        //      * window节点的scroll和resize的事件处理函数 
+        //      * @private 
+        //      */
+        //     function _eventHandler() {
+        //         $.each(imgArr, function (i, el) {
+        //             if (el !== undefined) {
+        //                 var $img = $(el);
+        //                 if (_checkBounding($img)) {
+        //                     $img.attr('src', $img.attr(IMG_SRC_DATA));
+        //                     $img.trigger(eventType);
+        //                     $img.unbind(eventType);
+        //                     delete imgArr[i];
+        //                 }
+        //             }
+        //         });
+        //         $.each(areaArr, function (i, el) {
+        //             if (el !== undefined) {
+        //                 var $area = $(el);
+        //                 if (_checkBounding($area)) {
+        //                     $area.hide();
+        //                     $area.removeClass(AREA_DATA_CLS);
+        //                     var $div = $("<div></div>");
+        //                     $div.insertBefore($area);
+        //                     $div.html($area.val());
+        //                     delete areaArr[i];
+        //                 }
+        //             }
+        //         });
+
+        //     }
+        //     /** 
+        //      * 检查需要懒加载的节点是否进入可视区域 
+        //      * @param {jQuery Object} [el] 
+        //      * @private 
+        //      */
+        //     function _checkBounding($el) {
+        //         var scrollY = document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset ||
+        //             0; //页面滚动条高度  
+        //         var seeY = window.innerHeight || document.documentElement.clientHeight; //浏览器可视区域高度  
+        //         if ($el.targetY) {
+        //             var targetY = $el.targetY;
+        //         } else {
+        //             var targetY = _getTargetY($el[0]);
+        //         }
+
+        //         //当目标节点进入可使区域  
+        //         if (Math.abs(targetY - scrollY) < seeY) {
+        //             return true;
+        //         } else {
+        //             return false;
+        //         }
+        //     }
+
+        //     /** 
+        //      * 获取目标节点距离页面顶部高度 
+        //      * @param {HTML Element} [el] 
+        //      * @private 
+        //      */
+        //     function _getTargetY(el) {
+        //         var tp = el.offsetTop;
+        //         if (el.offsetParent) {
+        //             while (el = el.offsetParent) {
+        //                 tp += el.offsetTop;
+        //             }
+        //         }
+        //         return tp;
+        //     }
+
+        //     /** 
+        //      * 特定元素即将出现时的回调函数 
+        //      * @param {jQuery Obj} [$el]  
+        //      * @param {Function} [func] 
+        //      * @private 
+        //      */
+        //     function _addCallBack($el, func) {
+        //         $el.bind(eventType, function (event) {
+        //             func.call($el, event);
+        //         });
+        //     }
+        //     return {
+        //         init: _init,
+        //         addCallBack: _addCallBack
+        //     };
+
+        // })(jQuery);
+        function lazyLoad(){
+            $("img.lazy").lazyLoad({
+                effect:"fadeIn"
+            });
+        }
+        //可视窗口的高度 
+        function wHeight() {
+            return document.documentElement.clientHeight;
+        }
+        console.log(wHeight())
+        $("body").css({
+            "height": wHeight()
+        })
+
+        // //通过input的值获取到地址
+        function getArea(areaNum) {
+            // alert(1);
+            var newArr = ["0 0 0", "0 0 1", "0 0 2", "0 0 3", "0 0 4", "0 0 5", "0 0 6", "0 0 7", "0 0 8", "0 0 9",
+                "0 0 10", "0 0 11", "0 0 12", "0 0 13", "0 0 14", "0 0  15"
+            ];
+            var areaArr = ["黄浦区", "徐汇区", "长宁区", "静安区", "普陀区", "虹口区", "杨浦区", "闵行区", "宝山区", "嘉定区", "浦东新区", "金山区", "松江区",
+                "青浦区", "奉贤区", "崇明县"
+            ];
+            for (var i = 0; i < newArr.length; i++) {
+                // console.log(areaNum+' '+newArr[i]);
+                if (areaNum == newArr[i]) {
+                    var index = i;
+                    return areaArr[index];
+                }
+            }
+        }
+        // 监听值变化	
+        var int = window.setInterval("check()", 1000);
+        $("#status").css({
+            "display": "none"
+        });
+        var recentQuery = "",
+            ga = "";
+        var check = function () {
+            value = $("#demo_treelist_dummy").attr("value");
+            if (value.length == 0) {} else {
+                ga = getArea(value);
+                if (ga != recentQuery) {
+                    $("#status").css({
+                        "display": "block"
+                    });
+                    $("#status").fadeIn();
+                    $.ajax({
+                        url: "http://47.92.34.144/thinkphp_5.0.16/public/index.php/index/address/storeDetailsByAreaId?area_name=" +
+                            ga,
+                        type: "post",
+                        async: "false",
+                        dataType: "json",
+                        success: function (data) {
+                            console.log(data);
+                            $("#status").fadeOut();
+                            var drsd = data.result.store_details;
+                            $("#demo_cont_treelist").find("h3").html("为您查询到以下结果");
+                            $("#demo_cont_treelist").css({
+                                "padding-top": "1.00rem",
+                                "background-size": "36% 36%"
+                            })
+                            $(".list-group").empty();
+                            $("#status").css({
+                                "display": "none"
+                            });
+                            for (var j = 0;
+                                (typeof (drsd) != "undefined") && j < drsd.length; j++) {
+                                $(".list-group").append(
+                                    "<div id='status' style='display:none'>&nbsp;</div><div class='list-group-item' style='border-top:1px  solid #CCCCCC;padding-top:12px'><img class='img.lazy' src='store_img/" +
+                                    drsd[j].store_image_url + "' alt=''> <h3>" + drsd[j].store_name +
+                                    "</h3><p>" + drsd[j].store_addr + "</p><h5>" + drsd[j].store_open_period +
+                                    "</h5></div>");
+                            }
+                            recentQuery = ga;
+                        },
+                        error() {
+                            //clearInterval(int);    //是否持续监听
+                        }
+                    })
+                }
+
+            }
+
+        }
+    </script>
+</body>
+
+</html>

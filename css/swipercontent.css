@@ -1,0 +1,25 @@
+.swiper-slide:nth-of-type(1) .content {
+  position: fixed;
+  left: 0.20rem;
+  top: 1.60rem;
+}
+
+.swiper-slide:nth-of-type(1) .content h3 {
+  color: #ED8A08;
+  font-size: 0.36rem;
+  text-align: left;
+}
+
+.swiper-slide:nth-of-type(1) .content p {
+  color: #ED8A08;
+  font-size: 0.24rem;
+  text-align: left;
+  margin-top: 0.20rem;
+}
+
+.swiper-slide:nth-of-type(1) .content p i {
+  color: #ED8A08;
+  font-size: 0.24rem;
+  text-align: left;
+  margin-top: 0.20rem;
+}

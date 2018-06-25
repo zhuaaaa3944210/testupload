@@ -1,0 +1,180 @@
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>爽车网</title>
+        <link rel="stylesheet" href="css/common.css">
+        <link rel="stylesheet" href="css/homepage.css">
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <a href="homepage.html">
+                    <img src="img/hp01.png" alt="">
+                </a>
+            </div>
+            <div class="mune_icon">
+                <img src="img/hp02.png" alt="">
+            </div>
+        </header>
+        <div class="sideMenu">
+            <ul>
+                <li>
+                    <a href="homepage.html">首页</a>
+                </li>
+                <li>
+                    <a href="member.html">会员服务</a>
+                </li>
+                <li>
+                        <a href="instruction.html">使用流程</a>
+                    </li>
+                
+                <li>
+                    <a href="aboutus.html">关于我们</a>
+                </li>
+                <li>
+                        <a href="servicedot1.html">服务网点</a>
+                    </li>
+            </ul>
+        </div>
+        <!-- nav -->
+        <div class="content">
+            <a href="#" class="main_img">
+                <img src="img/hp03.png" alt="">
+            </a>
+            <a href="scancode.html" class="xuanchuan">
+                <img src="img/hp04.png" alt="">
+            </a>
+        </div>
+        <ul class="service">
+            <li>
+                <a href="member.html">
+                    <h3>会员服务</h3>
+                    <h4>成就客户的心一成不变</h4>
+                    <span>了解详情</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <h3>优惠活动</h3>
+                    <h4>定期优惠活动,惊喜不断</h4>
+                    <span>了解详情</span>
+                </a>
+            </li>
+            <li>
+                <a href="servicedot.html">
+                    <h3>服务网点</h3>
+                    <h4>1000多家商户已经入住</h4>
+                    <span>了解详情</span>
+                </a>
+            </li>
+            <li>
+                <a href="aboutus.html">
+                    <h3>关于我们</h3>
+                    <h4>
+                        专注<i>•</i>创新<i>•</i>价值<i>•</i>共享
+                    </h4> 
+                    <span>了解详情</span>
+                </a>
+            </li>
+        </ul>
+        <!-- 底部 -->
+        <footer>
+            <div>
+                <a href="scancode.html">
+                    <img src="img/hp09.png" alt="">
+                    <span class="weixin">
+                        微信
+                    </span>
+                </a>
+                <a href="https://weibo.com/u/6466248406?from=myfollow_all">
+                        <img src="img/hp10.png" alt="">
+        
+                        <span class="weibo">
+                            微博
+                        </span>
+                    </a>
+                    <a href="smallRoutine.html">
+                            <img src="img/hp11.png" alt="">
+            
+                            <span class="xiaochengxu">
+                                小程序
+                            </span>
+                        </a>
+            </div>
+        </footer>
+    </body>
+    <script src="js/rem.js"></script>
+    <script src="js/touch.min.js"></script>
+    <script src="js/zepto.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/homepage.js"></script>
+    <script src="js/common.js"></script>
+    </html>
+    <!-- function isMobile(){  
+        $_SERVER['ALL_HTTP'] = isset($_SERVER['ALL_HTTP']) ? $_SERVER['ALL_HTTP'] : '';  
+        $mobile_browser = '0';  
+        if(preg_match('/(up.browser|up.link|mmp|symbian|smartphone|midp|wap|phone|iphone|ipad|ipod|android|xoom)/i', strtolower($_SERVER['HTTP_USER_AGENT'])))  
+            $mobile_browser++;  
+        if((isset($_SERVER['HTTP_ACCEPT'])) and (strpos(strtolower($_SERVER['HTTP_ACCEPT']),'application/vnd.wap.xhtml+xml') !== false))  
+            $mobile_browser++;  
+        if(isset($_SERVER['HTTP_X_WAP_PROFILE']))  
+            $mobile_browser++;  
+        if(isset($_SERVER['HTTP_PROFILE']))  
+            $mobile_browser++;  
+        $mobile_ua = strtolower(substr($_SERVER['HTTP_USER_AGENT'],0,4));  
+        $mobile_agents = array(  
+            'w3c ','acs-','alav','alca','amoi','audi','avan','benq','bird','blac',  
+            'blaz','brew','cell','cldc','cmd-','dang','doco','eric','hipt','inno',  
+            'ipaq','java','jigs','kddi','keji','leno','lg-c','lg-d','lg-g','lge-',  
+            'maui','maxo','midp','mits','mmef','mobi','mot-','moto','mwbp','nec-',  
+            'newt','noki','oper','palm','pana','pant','phil','play','port','prox',  
+            'qwap','sage','sams','sany','sch-','sec-','send','seri','sgh-','shar',  
+            'sie-','siem','smal','smar','sony','sph-','symb','t-mo','teli','tim-',  
+            'tosh','tsm-','upg1','upsi','vk-v','voda','wap-','wapa','wapi','wapp',  
+            'wapr','webc','winw','winw','xda','xda-' 
+            );  
+        if(in_array($mobile_ua, $mobile_agents))  
+            $mobile_browser++;  
+        if(strpos(strtolower($_SERVER['ALL_HTTP']), 'operamini') !== false)  
+            $mobile_browser++;  
+        // Pre-final check to reset everything if the user is on Windows  
+        if(strpos(strtolower($_SERVER['HTTP_USER_AGENT']), 'windows') !== false)  
+            $mobile_browser=0;  
+        // But WP7 is also Windows, with a slightly different characteristic  
+        if(strpos(strtolower($_SERVER['HTTP_USER_AGENT']), 'windows phone') !== false)  
+            $mobile_browser++;  
+        if($mobile_browser>0)  
+            return true;  
+        else
+            return false;  
+    }
+    
+    function isWeixin() { 
+      if (strpos($_SERVER['HTTP_USER_AGENT'], 'MicroMessenger') !== false) { 
+        return true; 
+      } else {
+        return false;  
+      }
+    }
+    
+    function isIphone(){
+        $userAgent = $_SERVER['HTTP_USER_AGENT'];
+        if(strpos($userAgent,"iPhone") || strpos($userAgent,"iPad") || strpos($userAgent,"iPod")){
+            return true;
+        }else if(strpos($userAgent,"Android")){
+            return false;
+        }
+    }
+    
+     
+    if(!(isMobile()||isWeixin()||isIphone())){
+        header("Location:index.html\n");
+    }
+    // else{
+    //     echo "web";
+    // }
+    ?> -->

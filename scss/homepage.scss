@@ -1,0 +1,100 @@
+
+.content{
+    width:100%;
+    height:auto;
+    position: relative;
+    padding-top:0.80rem;
+    .main_img{
+        display: block;
+        width:100%;
+        height:11.10rem;
+        img{
+            display:block;
+            width:100%;
+            height:100%;
+        }
+    }
+    .xuanchuan{
+        display: block;
+        width:100%;
+        height:6.90rem;
+        position: absolute;
+        left:0;
+        bottom:0;
+        img{
+            display:block;
+            width:100%;
+            height:100%;
+        }
+    }
+}
+.service{
+    width:100%;
+    height:auto;
+    margin-bottom:0.96rem;
+    li{
+        width:100%;
+        height:3.86rem;
+        margin-bottom:0.20rem;
+        a{
+            h3,h4{
+                height:0.42rem;
+                padding-top:0.96rem;
+                margin-left:0.80rem;
+                text-align:left;
+                line-height:0.42rem;
+                font-size:0.24rem;
+                color:#000000;
+            }
+            h4{
+                font-size:0.18rem;
+                padding-top:0;
+                font-weight: normal;
+            }
+            span{
+                display: block;
+                height:0.42rem;
+                margin-left:0.80rem;
+                padding-top:0.20rem;
+                text-align:left;
+                line-height:0.42rem;
+                font-size:0.16rem;
+                color:#F09204;
+                text-decoration: underline;
+            }
+        }
+    }
+    li:nth-child(1) a{
+        display:block;
+        width:100%;
+        height:100%;  
+        background: url("../img/hp05.png") no-repeat center;
+        background-size:100% 100%;
+    }
+    li:nth-child(2) a{
+        display:block;
+        width:100%;
+        height:100%;  
+        background: url("../img/hp06.png") no-repeat center;
+        background-size:100% 100%;
+    }
+    li:nth-child(3) a{
+        display:block;
+        width:100%;
+        height:100%;  
+        background: url("../img/hp07.png") no-repeat center;
+        background-size:100% 100%;
+    }
+    li:nth-child(4) a{
+        display:block;
+        width:100%;
+        height:100%;  
+        background: url("../img/hp08.png") no-repeat center;
+        background-size:100% 100%;
+    }
+    li:nth-child(4) h4 i{
+        margin-left:0.20rem;
+        margin-right:0.20rem;
+        font-style:normal;
+    }
+}

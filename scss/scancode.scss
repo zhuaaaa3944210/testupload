@@ -1,0 +1,108 @@
+body{
+    background: url(../img/sc04.png) no-repeat center;
+    background-size:100% 100%;
+}
+.header{
+    width:100%;
+    height:auto;
+    padding-top:0.80rem;
+    .header-img{
+        width:100%;
+        height:auto;
+        a{
+            display: block;
+            width:100%;
+            height:auto;
+            img{
+                display: block;
+                width:100%;
+                height:100%;
+            }
+        }
+    }
+    .header-title{
+        width:100%;
+        height:auto;
+        margin-bottom:0.40rem;
+        a{
+            display:block;
+            width:100%;
+            height:auto;
+            h3{
+                margin-bottom:0.08rem;
+                height:0.42rem;
+                font-size:0.48rem;
+                color:#E37710;
+                text-align:center;
+                line-height:0.42rem;
+                letter-spacing: 0.10rem;
+                margin-bottom:0.18rem;
+            }
+            h4{ 
+                margin-bottom:0.08rem;
+                height:0.42rem;   
+                font-size:0.24rem;
+                color:#E37710; 
+                text-align:center;
+                line-height:0.42rem;           
+            }
+        }
+    }
+}
+.footer{
+    width:100%;
+    height:auto;
+    margin-bottom:1.20rem;
+    .footer-img{
+        width:4.74rem;
+        height:auto;
+        margin:0 auto;
+        a{
+            display:table-cell;
+            width:100%;
+            height:100%;
+            margin:0 auto;
+            vertical-align: middle;
+            img{
+                display: block;
+                width:4.70rem;
+                height:4.70rem;
+                margin-bottom:0.12rem;
+            }
+            h3{
+                height:0.42rem;
+                text-align:center;
+                font-size:0.28rem;
+                line-height:0.42rem;
+                color:#E37710;
+                padding-bottom:0.30rem;
+            }
+        }
+    }
+    .footer-title{
+        width:100%;
+        height:0.60rem;
+        background:#ED8A08;
+        margin-bottom:0.32rem;
+        h4{
+            width:100%;
+            height:100%;
+            text-align:center;
+            line-height:0.60rem;
+            font-size:0.20rem;
+            font-weight:normal;
+            color:#F9DBC2;
+        }
+    }
+    .logo{
+        display: block;
+        width:2.24rem;
+        height:0.78rem;
+        margin:0.32rem auto;
+        img{
+            display: block;
+            width:100%;
+            height:100%;
+        }
+    }
+}
